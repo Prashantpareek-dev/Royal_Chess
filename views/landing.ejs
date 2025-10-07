@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional online chess game - Join or create multiplayer chess rooms with real-time gameplay and modern design">
+    <meta name="keywords" content="chess, online chess, multiplayer chess, chess game, chess rooms, play chess online">
+    <meta name="author" content="Chess Game">
+    <meta name="theme-color" content="#000000">
+    
+    <title>Chess Game - Play Online Chess</title>
+    
+    <!-- Enhanced Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjE2IiB5PSIyMCIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7imZQ8L3RleHQ+Cjwvc3ZnPg==">
+    
+    <!-- Enhanced Meta Tags for Better SEO -->
+    <meta property="og:title" content="Chess Game - Professional Online Chess">
+    <meta property="og:description" content="Play chess online with friends in real-time multiplayer rooms">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/chess-preview.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chess Game - Professional Online Chess">
+    <meta name="twitter:description" content="Play chess online with friends in real-time multiplayer rooms">
+    <meta name="twitter:image" content="/images/chess-preview.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- Enhanced Font Loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/StyleSheet/style.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Chess Game",
+        "description": "Professional online chess game with real-time multiplayer functionality",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+
+<body class="text-white overflow-x-hidden">
+    <!-- Enhanced Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50">
+        Skip to main content
+    </a>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-50 backdrop-blur-md border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between" role="navigation" aria-label="Main navigation">
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl font-bold flex items-center gap-2">
+                    <span role="img" aria-label="Chess piece">♛</span>
+                    Chess Game
+                </h1>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <!-- GitHub Link (if applicable) -->
+                <a href="#about" class="btn btn-ghost btn-sm" aria-label="About this game">
+                    ℹ️ About
+                </a>
+                
+                <!-- Help Button -->
+                <button id="helpBtn" class="btn btn-ghost btn-sm" aria-label="How to play">
+                    ❓ Help
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="chess-piece-bg" style="top: 10%; left: 5%; animation-delay: 0s;">♔</div>
+            <div class="chess-piece-bg" style="top: 20%; right: 10%; animation-delay: 2s;">♛</div>
+            <div class="chess-piece-bg" style="bottom: 30%; left: 15%; animation-delay: 4s;">♜</div>
+            <div class="chess-piece-bg" style="bottom: 10%; right: 20%; animation-delay: 6s;">♝</div>
+        </div>
+
+        <main id="main-content" class="container mx-auto px-4 py-20 z-10 relative">
+            <div class="text-center mb-12">
+                <!-- Hero Title -->
+                <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+                    Play Chess Online
+                </h2>
+                
+                <!-- Hero Subtitle -->
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Experience the timeless game of chess with modern technology. 
+                    Create rooms, invite friends, and enjoy real-time multiplayer gameplay.
+                </p>
+                
+                <!-- Feature Highlights -->
+                <div class="flex flex-wrap justify-center gap-6 mb-12 text-sm">
+                    <div class="flex items-center gap-2 glass-effect px-4 py-2 rounded-full">
+                        <span role="img" aria-label="Real-time">⚡</span>
+                        Real-time Multiplayer
+                    </div>
+                    <div class="flex items-center gap-2 glass-effect px-4 py-2 rounded-full">
+                        <span role="img" aria-label="Rooms">🏠</span>
+                        Private Rooms
+                    </div>
+                    <div class="flex items-center gap-2 glass-effect px-4 py-2 rounded-full">
+                        <span role="img" aria-label="Mobile">📱</span>
+                        Mobile Friendly
+                    </div>
+                    <div class="flex items-center gap-2 glass-effect px-4 py-2 rounded-full">
+                        <span role="img" aria-label="Free">🆓</span>
+                        Completely Free
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Game Controls -->
+            <div class="max-w-2xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Join Room Card -->
+                    <div class="glass-effect rounded-2xl p-8 hover:scale-105 transition-transform duration-300" role="region" aria-labelledby="join-room-title">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-4" role="img" aria-label="Join game">🚪</div>
+                            <h3 id="join-room-title" class="text-2xl font-bold mb-2">Join Room</h3>
+                            <p class="text-gray-300">Enter an existing room to play with friends</p>
+                        </div>
+                        
+                        <form id="joinRoomForm" class="space-y-4">
+                            <div>
+                                <label for="roomInput" class="block text-sm font-medium mb-2">Room ID</label>
+                                <input 
+                                    type="text" 
+                                    id="roomInput" 
+                                    class="form-input w-full text-center font-mono"
+                                    placeholder="Enter room ID..."
+                                    pattern="[a-zA-Z0-9]+"
+                                    title="Room ID should contain only letters and numbers"
+                                    maxlength="20"
+                                    required
+                                    autocomplete="off"
+                                    aria-describedby="roomInputHelp"
+                                >
+                                <div id="roomInputHelp" class="text-xs text-gray-400 mt-1">
+                                    Room IDs are case-sensitive
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-full" id="joinBtn">
+                                <span class="flex items-center justify-center gap-2">
+                                    <span role="img" aria-label="Arrow">➡️</span>
+                                    Join Game
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Create Room Card -->
+                    <div class="glass-effect rounded-2xl p-8 hover:scale-105 transition-transform duration-300" role="region" aria-labelledby="create-room-title">
+                        <div class="text-center mb-6">
+                            <div class="text-5xl mb-4" role="img" aria-label="Create game">⭐</div>
+                            <h3 id="create-room-title" class="text-2xl font-bold mb-2">Create Room</h3>
+                            <p class="text-gray-300">Start a new game and invite your friends</p>
+                        </div>
+                        
+                        <form id="createRoomForm" class="space-y-4">
+                            <div>
+                                <label for="newRoomInput" class="block text-sm font-medium mb-2">Custom Room ID (Optional)</label>
+                                <input 
+                                    type="text" 
+                                    id="newRoomInput" 
+                                    class="form-input w-full text-center font-mono"
+                                    placeholder="Leave empty for random ID"
+                                    pattern="[a-zA-Z0-9]+"
+                                    title="Room ID should contain only letters and numbers"
+                                    maxlength="20"
+                                    autocomplete="off"
+                                    aria-describedby="newRoomInputHelp"
+                                >
+                                <div id="newRoomInputHelp" class="text-xs text-gray-400 mt-1">
+                                    Custom IDs make rooms easier to share
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success w-full" id="createBtn">
+                                <span class="flex items-center justify-center gap-2">
+                                    <span role="img" aria-label="Plus">➕</span>
+                                    Create Game
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Quick Play Option -->
+                <div class="mt-8 text-center">
+                    <div class="glass-effect rounded-2xl p-6 inline-block">
+                        <h3 class="text-lg font-semibold mb-3">Don't have a room?</h3>
+                        <button id="quickPlayBtn" class="btn btn-secondary">
+                            <span class="flex items-center justify-center gap-2">
+                                <span role="img" aria-label="Lightning">⚡</span>
+                                Quick Play
+                            </span>
+                        </button>
+                        <p class="text-xs text-gray-400 mt-2">Creates a random room automatically</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about" class="py-20 bg-black bg-opacity-30" role="region" aria-labelledby="features-title">
+        <div class="container mx-auto px-4">
+            <h2 id="features-title" class="text-4xl font-bold text-center mb-16">Why Play Here?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="text-center glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4" role="img" aria-label="Shield">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3">Secure & Private</h3>
+                    <p class="text-gray-300">Your games are secure with room-based privacy. Only invited players can join your games.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4" role="img" aria-label="Speed">🚀</div>
+                    <h3 class="text-xl font-bold mb-3">Lightning Fast</h3>
+                    <p class="text-gray-300">Real-time gameplay with instant move synchronization. No lag, no delays.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4" role="img" aria-label="Devices">📱</div>
+                    <h3 class="text-xl font-bold mb-3">Cross-Platform</h3>
+                    <p class="text-gray-300">Play on any device - desktop, tablet, or mobile. Responsive design ensures perfect gameplay.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="text-center glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4" role="img" aria-label="Chat">💬</div>
+                    <h3 class="text-xl font-bold mb-3">Built-in Chat</h3>
+                    <p class="text-gray-300">Communicate with your opponent through our integrated chat system.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="text-center glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4" role="img" aria-label="History">📚</div>
+                    <h3 class="text-xl font-bold mb-3">Move History</h3>
+                    <p class="text-gray-300">Track every move with our comprehensive move history and game analysis.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="text-center glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4" role="img" aria-label="Free">🎯</div>
+                    <h3 class="text-xl font-bold mb-3">Completely Free</h3>
+                    <p class="text-gray-300">No subscriptions, no hidden fees. Enjoy unlimited chess games absolutely free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="py-20" role="region" aria-labelledby="howto-title">
+        <div class="container mx-auto px-4">
+            <h2 id="howto-title" class="text-4xl font-bold text-center mb-16">How to Play</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-effect rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">1</span>
+                            Create or Join a Room
+                        </h3>
+                        <p class="text-gray-300">Start by creating a new room or joining an existing one using a room ID. Share the room ID with friends to invite them.</p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">2</span>
+                            Wait for Opponent
+                        </h3>
+                        <p class="text-gray-300">Once in a room, wait for another player to join. The game will automatically start when both players are ready.</p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">3</span>
+                            Make Your Moves
+                        </h3>
+                        <p class="text-gray-300">Click on a piece to select it, then click on a valid square to move. Your moves will be instantly synchronized with your opponent.</p>
+                    </div>
+                    
+                    <div class="glass-effect rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm">4</span>
+                            Enjoy the Game!
+                        </h3>
+                        <p class="text-gray-300">Use the chat to communicate, view move history, and enjoy a complete chess experience with all standard rules implemented.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black bg-opacity-50 border-t border-white/10" role="contentinfo">
+        <div class="container mx-auto px-4 text-center">
+            <div class="glass-effect rounded-xl p-6 inline-block">
+                <h3 class="text-xl font-bold mb-3">♛ Chess Game</h3>
+                <p class="text-gray-300 mb-4">Professional online chess experience</p>
+                <div class="flex justify-center gap-4 text-sm text-gray-400">
+                    <span>Made with ❤️ for chess lovers</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced Notification Toast -->
+    <div id="notificationToast" 
+         class="fixed top-20 right-4 glass-effect rounded-lg p-4 z-40 transition-transform duration-300 transform translate-x-full"
+         role="alert"
+         aria-live="assertive">
+        <div class="flex items-center gap-3">
+            <span id="notificationIcon" class="text-xl" aria-hidden="true">ℹ️</span>
+            <div>
+                <div id="notificationText" class="font-medium">Notification</div>
+                <div id="notificationSubtext" class="text-xs text-gray-300"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" 
+         class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="helpModalTitle">
+        <div class="modal-content p-8 max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="helpModalTitle" class="text-2xl font-bold">❓ How to Play</h3>
+                <button id="closeHelpBtn" class="text-gray-400 hover:text-white text-2xl" aria-label="Close help modal">
+                    ×
+                </button>
+            </div>
+            
+            <div class="space-y-6 text-sm">
+                <div>
+                    <h4 class="font-bold mb-2">🎮 Getting Started</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Create a new room or join an existing one with a room ID</li>
+                        <li>Share your room ID with friends to invite them</li>
+                        <li>Wait for another player to join to start the game</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-2">🖱️ Making Moves</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Click on a piece to select it (valid moves will be highlighted)</li>
+                        <li>Click on a highlighted square to move the piece</li>
+                        <li>Click elsewhere to deselect a piece</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-2">⌨️ Keyboard Shortcuts</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li><kbd>F</kbd> - Flip the board</li>
+                        <li><kbd>R</kbd> - Reset board view</li>
+                        <li><kbd>Escape</kbd> - Deselect piece</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-2">💬 Features</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        <li>Real-time chat with your opponent</li>
+                        <li>Move history tracking</li>
+                        <li>Captured pieces display</li>
+                        <li>Game state indicators</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Scripts -->
+    <script>
+        // Enhanced form validation and submission
+        class LandingPageManager {
+            constructor() {
+                this.initializeEventListeners();
+                this.initializeNotifications();
+            }
+            
+            initializeEventListeners() {
+                // Join Room Form
+                document.getElementById('joinRoomForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.joinRoom();
+                });
+                
+                // Create Room Form
+                document.getElementById('createRoomForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.createRoom();
+                });
+                
+                // Quick Play
+                document.getElementById('quickPlayBtn').addEventListener('click', () => {
+                    this.quickPlay();
+                });
+                
+                // Help Modal
+                document.getElementById('helpBtn').addEventListener('click', () => {
+                    this.showHelpModal();
+                });
+                
+                document.getElementById('closeHelpBtn').addEventListener('click', () => {
+                    this.hideHelpModal();
+                });
+                
+                // Modal backdrop click
+                document.getElementById('helpModal').addEventListener('click', (e) => {
+                    if (e.target.id === 'helpModal') {
+                        this.hideHelpModal();
+                    }
+                });
+                
+                // Escape key handling
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.hideHelpModal();
+                    }
+                });
+                
+                // Input formatting
+                const roomInput = document.getElementById('roomInput');
+                const newRoomInput = document.getElementById('newRoomInput');
+                
+                [roomInput, newRoomInput].forEach(input => {
+                    input.addEventListener('input', (e) => {
+                        // Remove invalid characters
+                        e.target.value = e.target.value.replace(/[^a-zA-Z0-9]/g, '');
+                    });
+                });
+            }
+            
+            initializeNotifications() {
+                this.notificationQueue = [];
+                this.isShowingNotification = false;
+            }
+            
+            joinRoom() {
+                const roomInput = document.getElementById('roomInput');
+                const roomId = roomInput.value.trim().toUpperCase();
+                
+                if (!roomId) {
+                    this.showNotification('⚠️', 'Please enter a room ID', 'Room ID cannot be empty');
+                    roomInput.focus();
+                    return;
+                }
+                
+                if (roomId.length < 3) {
+                    this.showNotification('⚠️', 'Room ID too short', 'Room ID must be at least 3 characters');
+                    roomInput.focus();
+                    return;
+                }
+                
+                // Validate room ID format
+                if (!/^[A-Z0-9\-]{3,12}$/.test(roomId)) {
+                    this.showNotification('⚠️', 'Invalid room ID format', 'Use only letters, numbers, and hyphens');
+                    roomInput.focus();
+                    return;
+                }
+                
+                this.showNotification('🔄', 'Joining room...', `Connecting to room: ${roomId}`);
+                
+                // Redirect to game with proper query parameters
+                setTimeout(() => {
+                    window.location.href = `/game?room=${encodeURIComponent(roomId)}&role=white`;
+                }, 1000);
+            }
+            
+            createRoom() {
+                const newRoomInput = document.getElementById('newRoomInput');
+                const customRoomId = newRoomInput.value.trim().toUpperCase();
+                
+                if (customRoomId && customRoomId.length < 3) {
+                    this.showNotification('⚠️', 'Room ID too short', 'Custom room ID must be at least 3 characters');
+                    newRoomInput.focus();
+                    return;
+                }
+                
+                // Validate custom room ID format if provided
+                if (customRoomId && !/^[A-Z0-9\-]{3,12}$/.test(customRoomId)) {
+                    this.showNotification('⚠️', 'Invalid room ID format', 'Use only letters, numbers, and hyphens');
+                    newRoomInput.focus();
+                    return;
+                }
+                
+                const roomId = customRoomId || this.generateRandomRoomId();
+                
+                this.showNotification('✨', 'Creating room...', `Setting up room: ${roomId}`);
+                
+                // Redirect to game with proper query parameters
+                setTimeout(() => {
+                    window.location.href = `/game?room=${encodeURIComponent(roomId)}&role=white`;
+                }, 1000);
+            }
+            
+            quickPlay() {
+                const roomId = this.generateRandomRoomId();
+                this.showNotification('⚡', 'Quick Play started!', `Generated room: ${roomId}`);
+                
+                setTimeout(() => {
+                    window.location.href = `/game?room=${encodeURIComponent(roomId)}&role=white`;
+                }, 1000);
+            }
+            
+            generateRandomRoomId() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                let result = '';
+                for (let i = 0; i < 6; i++) {
+                    result += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return result;
+            }
+            
+            showNotification(icon, text, subtext = '') {
+                const notification = {
+                    icon,
+                    text,
+                    subtext,
+                    timestamp: Date.now()
+                };
+                
+                this.notificationQueue.push(notification);
+                
+                if (!this.isShowingNotification) {
+                    this.displayNextNotification();
+                }
+            }
+            
+            displayNextNotification() {
+                if (this.notificationQueue.length === 0) {
+                    this.isShowingNotification = false;
+                    return;
+                }
+                
+                this.isShowingNotification = true;
+                const notification = this.notificationQueue.shift();
+                
+                const toast = document.getElementById('notificationToast');
+                const icon = document.getElementById('notificationIcon');
+                const text = document.getElementById('notificationText');
+                const subtext = document.getElementById('notificationSubtext');
+                
+                icon.textContent = notification.icon;
+                text.textContent = notification.text;
+                subtext.textContent = notification.subtext;
+                
+                // Show notification
+                toast.style.transform = 'translateX(0)';
+                
+                // Hide notification after 4 seconds
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(100%)';
+                    
+                    // Show next notification after transition
+                    setTimeout(() => {
+                        this.displayNextNotification();
+                    }, 300);
+                }, 4000);
+            }
+            
+            showHelpModal() {
+                document.getElementById('helpModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            hideHelpModal() {
+                document.getElementById('helpModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new LandingPageManager();
+            console.log('🎮 Landing page initialized');
+        });
+        
+        // Analytics
+        window.landingAnalytics = {
+            pageLoadTime: Date.now(),
+            interactions: {
+                joinAttempts: 0,
+                createAttempts: 0,
+                quickPlayAttempts: 0
+            }
+        };
+    </script>
+    
+    <!-- Enhanced CSS Animations -->
+    <style>
+        .chess-piece-bg {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        kbd {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</body>
+</html>
